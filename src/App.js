@@ -1,14 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux'
 import './App.css';
 
-function App() {
+function App(props) {
+
+const handleInc = (evt) => {
+  props.dispatch({
+    type: 'INCREMENT'
+  })
+}
+
+const handleDec = (evt) => {
+  props.dispatch({
+    type: 'DECREMENT'
+  })
+}
+
+console.log(props.countArr.length);
+// debugger;
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <button onClick={handleInc}>Increment</button>
+        <button onClick={handleDec}>Decrement</button>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        {props.countArr.length}
         </p>
         <a
           className="App-link"
@@ -23,4 +40,11 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    countArr: state.countArr
+  }
+}
+
+
+export default connect(mapStateToProps)(App);

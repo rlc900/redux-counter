@@ -16,7 +16,7 @@ const handleDec = (evt) => {
   })
 }
 
-console.log(props.countArr.length);
+// console.log(props.countArr.length);
 // debugger;
 
   return (
@@ -25,7 +25,7 @@ console.log(props.countArr.length);
         <button onClick={handleInc}>Increment</button>
         <button onClick={handleDec}>Decrement</button>
         <p>
-        {props.countArr.length}
+        {props.countArr}
         </p>
         <a
           className="App-link"

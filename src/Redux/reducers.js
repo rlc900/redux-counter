@@ -1,6 +1,6 @@
 export default function reducerFunc(
 state = {
-  countArr: []
+  countArr: 0
 },
   action
 ) {

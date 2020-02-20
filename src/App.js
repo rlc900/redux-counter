@@ -16,25 +16,17 @@ const handleDec = (evt) => {
   })
 }
 
-// console.log(props.countArr.length);
+// console.log(props.count);
 // debugger;
-
+console.log(props.dispatch)
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={handleInc}>Increment</button>
-        <button onClick={handleDec}>Decrement</button>
-        <p>
-        {props.countArr}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <button onClick={handleInc}>Increment</button>
+      <button onClick={handleDec}>Decrement</button>
+      <p>
+      {props.count}
+      </p>
       </header>
     </div>
   );
@@ -42,9 +34,14 @@ const handleDec = (evt) => {
 
 const mapStateToProps = (state) => {
   return {
-    countArr: state.countArr
+    count: state.count
   }
 }
 
 
 export default connect(mapStateToProps)(App);
+
+// connect(mapStateToProps)(App)
+  // {props.count}
+  // <button onClick={handleInc}>Increment</button>
+  // <button onClick={handleDec}>Decrement</button>

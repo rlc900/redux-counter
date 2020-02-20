@@ -1,6 +1,6 @@
 export default function reducerFunc(
 state = {
-  countArr: 0
+  count: 0
 },
   action
 ) {
@@ -8,12 +8,12 @@ state = {
     case 'INCREMENT':
       return {
         ...state,
-        countArr: state.countArr + 1
+        count: state.count + 1
       }
     case 'DECREMENT':
     return {
       ...state,
-      countArr: state.countArr - 1
+      count: state.count - 1
     }
     default:
       return state
